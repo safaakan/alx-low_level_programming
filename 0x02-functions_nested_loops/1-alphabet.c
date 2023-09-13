@@ -5,15 +5,15 @@
   *
   * Return: void
   */
+
 void print_alphabet(void)
 {
-char ch = 'a';
-while (ch <= 'z')
-{
-_putchar(ch);
-ch++;
-}
-_putchar('\n');
+	char ch;
 
-return (0);
+	for (ch = 'a'; ch <= 'z'; ch++)
+	{
+		_putchar(ch);
+	}
+
+	_putchar('\n');
 }
