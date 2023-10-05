@@ -2,33 +2,32 @@
 #include "main.h"
 
 /**
- * _strdup - create an array of chars
- * @str: char
+ * _strdup - duplicates a string into newly allocated array
  *
- * Return: char
+ * @str: string to duplicate
+ *
+ * Return: pointer to new string
  */
-
 char *_strdup(char *str)
 {
-int length, i;
-	char *arr;
+	int size = 0;
+	char *ptr, *ret;
 
-	if (str == NULL)
-	{
-		return (NULL);
-	}
-
-	length = 0;
-	while (*(str + length) != '\0')
-	{
-		length++;
-	}
-
-	arr = malloc(length * sizeof(char) + 1);
-	if (arr == NULL)
+	if (!str)
 		return (NULL);
 
-	for (i = 0; i < length; i++)
-	{
-		arr[i] = str[i];
-	}
+	ptr = str;
+	while (*ptr++)
+		size++;
+
+	ret = malloc(size + 1);
+	if (!ret)
+		return (NULL);
+
+	ptr = ret;
+	while (*str)
+		*ptr++ = *str++;
+
+	*ptr = 0;
+	return (ret);
+}
