@@ -7,6 +7,7 @@
  *
  * Return: char
  */
+
 char *_strdup(char *str)
 {
 int length, i;
